@@ -1,0 +1,11 @@
+Explaining the neural network architecture
+
+
+Preprocessing the data -  
+We use tensorflow (integrated with keras) to set up our neural network. Our goal is to train the model on the full iris data set (3 species, 4 attributes). 
+
+After importing the required packages, we read the CSV file using pandas and rename each of the speicies as floats (setosa = 0.0, versicolor = 1.0, virginica = 2.0) to avoid erros regaridng mixed data types.
+
+We create two numpy arrays, one for the four different attriubtes/features over which the model needs to be trained and one for the labels (name of the speicies itself).
+
+An important part of of preprocessing the data is normalizing the x-axis vaues. This transforms the range from 0 to 
