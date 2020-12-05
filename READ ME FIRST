@@ -1,4 +1,4 @@
-Explaining the neural network architecture (file 
+Explaining the neural network architecture (file csds391_p2.ipynb)
 
 
 Preprocessing the data -  
@@ -25,4 +25,11 @@ We took out 0.1 (10%) of the shuffled data as a sample to validate the model lat
 Shuffle is set to true to prevent the model from simply learning the order of the features and labels.
 
 After 50 epochs we can see that our model is trained and is 97.78% accurate. The validation accuracy of 100% shows the the model truly is well trained. 
+
+
+
+Contrasting with K-means clustering - 
+We next set up a k-means clustering model with 3 clusters. We don't train this model but let it start predicting on its own. 
+
+We see the output array after the model is passed over the full iris dataset and the results seem fairly good with most of the samples that were close together idenitifes as being under the same speicies. 
 
