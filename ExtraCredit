@@ -1,4 +1,4 @@
-Explaining the neural network architecture
+Explaining the neural network architecture (file 
 
 
 Preprocessing the data -  
@@ -8,4 +8,21 @@ After importing the required packages, we read the CSV file using pandas and ren
 
 We create two numpy arrays, one for the four different attriubtes/features over which the model needs to be trained and one for the labels (name of the speicies itself).
 
-An important part of of preprocessing the data is normalizing the x-axis vaues. This transforms the range from 0 to 
+An important part of of preprocessing the data is normalizing the x-axis vaues. This transforms the range from 0.0-8.0 to 0.0-1.0 and makes it easier for the model to learn. The normalization is done using the MinMaxScaler
+
+The other important part regarding setting up data is to shuffle it once. This will help with validation later on. 
+
+
+Traiining the model - 
+We use a sequential model with 2 hidden layers with the third layer being the output layer. The output layer uses the softmax activation to produce probabilites.
+
+We set our model optimizer to be SGD (Stochastic Gradient Descent) rather than the default Adam optimizer. Our lerning rate is set at 0.05 and we use sparse categorical crossentropy for our loss calculation.
+
+Next we set the x values as the iris features and the y values as the iris labels. We have 15 batches with each batch learning 10 samples at once and this is done 50 times. 
+
+We took out 0.1 (10%) of the shuffled data as a sample to validate the model later on. This means that this 10% or 15 samples is previously unseen by the model and we can use it to test how well the model can predict their labels. 
+
+Shuffle is set to true to prevent the model from simply learning the order of the features and labels.
+
+After 50 epochs we can see that our model is trained and is 97.78% accurate. The validation accuracy of 100% shows the the model truly is well trained. 
+
