@@ -28,8 +28,18 @@ After 50 epochs we can see that our model is trained and is 97.78% accurate. The
 
 
 
-Contrasting with K-means clustering - 
+Contrasting with K-means clustering (file csds391-p2_kmeans) - 
 We next set up a k-means clustering model with 3 clusters. We don't train this model but let it start predicting on its own. 
 
 We see the output array after the model is passed over the full iris dataset and the results seem fairly good with most of the samples that were close together idenitifes as being under the same speicies. 
+
+K-means is model that doesn't work of off historical data but rather groups samples with similar attritubes together. 
+The neural network model on the other hand learns based on historical data and can therefore recognize that some of the far plotted samples are also part of the same species (since it may have seen those in the training sample too). 
+
+The k-means data has roughly a 78% success rate which is much lower than the 3 layer neural network. This is to be expected though since there are quite a few samples that fall far from their labels and into the descion boundaries of other means. 
+
+A point to recognize though is that the validation sample for the neural network was picked randomly. This means that it could have included all points that are very close to their means and are easier to predict. K-means does not have such a benefit. 
+However, is it also possilbe for cases to exist where the training data included no far away points and the validation data are filled with sample points that have a low probabiltiy of being in the same group due the the training data. 
+
+
 
